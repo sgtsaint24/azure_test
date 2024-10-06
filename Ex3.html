@@ -1,0 +1,54 @@
+<!--Units of Mass Converter: 
+Your company wants to offer their international customers the ability to convert different units of measurement from one type to another. The list of units that they want to convert to and from are kilograms, pounds, ounces, tons, and stones.
+
+When a user inputs a valid number into one of the text boxes, the other text box should automatically display the converted measurement.
+When a user changes one of the units of measurement, the linked text box should displayed the converted measurement.
+
+Measurements should only display up to five decimal points of precision.
+
+(Hint: use google's unit converter as an example)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+
+    <style>
+        #container {
+            border-style: solid;
+            border-width: 2px;
+            margin: 5px;
+            padding: 5px;
+            width: max-content;
+        }
+    </style>
+
+    <script src="converter.js"></script>
+</head>
+<body>
+    
+    <div id="container">
+        <input id="inputOne" type="number" min="0" oninput="Calculate('inputTwo')">
+        <select id="selectOne" onchange="Calculate('inputOne')">
+            <option value="lbs">Pounds</option>
+            <option value="ozs">Ounces</option>
+            <option value="kgs">Kilograms</option>
+            <option value="stn">Stones</option>
+            <option value="ton">Tons</option>
+        </select>
+
+        <strong>=</strong>
+
+        <input id="inputTwo"  type="number" min="0" oninput="Calculate('inputOne')">
+        <select id="selectTwo" onchange="Calculate('inputTwo')">
+            <option value="lbs">Pounds</option>
+            <option value="ozs">Ounces</option>
+            <option value="kgs">Kilograms</option>
+            <option value="stn">Stones</option>
+            <option value="ton">Tons</option>
+        </select>
+    </div>
+
+</body>
+</html>
